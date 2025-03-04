@@ -18,6 +18,5 @@ padded_vector[:len(image_Vector)] = image_Vector
 print("We require this number of qubits: ", num_qubits)
 qc = QuantumCircuit(num_qubits)
 
-init_gate = qc.initialize(padded_vector, range(num_qubits))
-init_gate.label = 'init'
+qc.initialize(padded_vector, range(num_qubits))
 print(qc.decompose().draw('text'))
